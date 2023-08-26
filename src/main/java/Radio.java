@@ -1,7 +1,13 @@
 public class Radio {
  public int currentRadioStation;
- public  int currentVolume;
 
+public int getCurrentRadioStation () {
+     return currentRadioStation;
+ }
+public void setCurrentRadioStation(int newCurrentRadioStation){
+    currentRadioStation = newCurrentRadioStation;
+}
+    public  int currentVolume;
     public void increaseRadioStation() {
         if (currentRadioStation < 9) {
             currentRadioStation++;
