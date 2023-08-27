@@ -27,32 +27,4 @@ public void setCurrentRadioStation(int newCurrentRadioStation){
         }
         currentVolume = newCurrentVolume;
     }
-    public void nextRadioStation() {
-        if (currentRadioStation < 9) {
-            currentRadioStation++;
-
-        }
     }
-public void prevRadioStation() {
-        if (currentRadioStation > 0) {
-            currentRadioStation--;
-        } else {
-            currentRadioStation = 9;
-        }
-}
-    public void nextVolume() {
-        if (currentVolume < 100) {
-            currentVolume++;
-        } else {
-            currentVolume = 100;
-        }
-        }
-    public void prevVolume() {
-        if (currentVolume > 0) {
-            currentVolume--;
-        } else {
-            currentVolume = 0;
-        }
-
-    }
-}
