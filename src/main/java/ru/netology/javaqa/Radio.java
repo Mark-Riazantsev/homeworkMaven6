@@ -4,24 +4,22 @@ public class Radio {
     private int maxRadioStation = 9;
 
     private int countRadioStation = 10;
-    private int currentRadioStation;
+    private int currentRadioStation = minRadioStation;
 
     public Radio(int countRadioStation) {
 
-//this.firstRadioStation = firstRadioStation;
-//this.lastRadioStation = lastRadioStation;
 this.countRadioStation = countRadioStation;
+this.currentRadioStation = minRadioStation;
     }
     public Radio() {
-
     }
 
 public int getCurrentRadioStation () {
      return currentRadioStation;
  }
 public void setCurrentRadioStation(int newCurrentRadioStation){
-    if (newCurrentRadioStation < 0 && newCurrentRadioStation > 9){
-        newCurrentRadioStation = 0;
+    if (newCurrentRadioStation < 0){
+        newCurrentRadioStation = 9;
     }
     if (newCurrentRadioStation > 9){
         newCurrentRadioStation = 0;
