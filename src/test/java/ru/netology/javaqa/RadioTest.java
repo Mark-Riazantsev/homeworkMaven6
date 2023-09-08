@@ -9,7 +9,7 @@ public class RadioTest {
     public void shouldSetRadioStation_1() {
         Radio rad = new Radio();
 
-        rad.setCurrentRadioStation(-1);
+        rad.setCurrentRadioStation(0);
         rad.prevRadioStation();
 
 
@@ -71,26 +71,26 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetRadioStationStay9() {
+    public void shouldSetRadioStationStay10() {
         Radio rad = new Radio();
         rad.setCurrentRadioStation(9);
         rad.nextRadioStation();
 
 
-        int expected = 9;
+        int expected = 0;
         int actual = rad.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldSetRadioStation10() {
+    public void shouldSetRadioStation8() {
         Radio rad = new Radio();
 
-        rad.setCurrentRadioStation(10);
+        rad.setCurrentRadioStation(7);
         rad.nextRadioStation();
 
 
-        int expected = 0;
+        int expected = 9;
         int actual = rad.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }

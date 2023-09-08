@@ -35,15 +35,18 @@ public class Radio {
     }
 
     public void nextRadioStation() {
-        if (currentRadioStation < 9 && currentRadioStation != 0) {
+        if (currentRadioStation != 9) {
             currentRadioStation++;
+            return;
+        } else {
+            currentRadioStation = 0;
         }
     }
-
     public void prevRadioStation() {
 
-        if (currentRadioStation > 0) {
+        if (currentRadioStation != 0) {
             currentRadioStation--;
+            return;
         } else {
             currentRadioStation = 9;
 
