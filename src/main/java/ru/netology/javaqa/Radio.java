@@ -1,20 +1,55 @@
 package ru.netology.javaqa;
 
 public class Radio {
-    private final int minRadioStation = 0;
-    private final int maxRadioStation = 9;
-
-    private int currentRadioStation = minRadioStation;
-    private final int minVolume = 0;
-    private final int maxVolume = 100;
-    private int currentVolume;
+    private int maxRadioStation;
+    int countRadioStation;
+    int currentRadioStation;
+    int currentVolume;
 
     public Radio(int countRadioStation) {
 
-        this.currentRadioStation = minRadioStation;
+        this.maxRadioStation = countRadioStation - 1;
     }
 
     public Radio() {
+        this.maxRadioStation = 9;
+    }
+
+    public void nextRadioStation() {
+        if (currentRadioStation != maxRadioStation) {
+            currentRadioStation++;
+            return;
+        } else {
+            currentRadioStation = 0;
+        }
+    }
+
+    public void prevRadioStation() {
+
+        if (currentRadioStation != 0) {
+            currentRadioStation--;
+            return;
+        } else {
+            currentRadioStation = maxRadioStation;
+
+        }
+    }
+
+    public void nextVolume() {
+        if (currentVolume < 100) {
+            currentVolume++;
+        } else {
+            currentVolume = 100;
+        }
+    }
+
+    public void prevVolume() {
+        if (currentVolume > 0) {
+            currentVolume--;
+        } else {
+            currentVolume = 0;
+
+        }
     }
 
     public int getCurrentRadioStation() {
@@ -27,9 +62,9 @@ public class Radio {
 
     public void setCurrentRadioStation(int newCurrentRadioStation) {
         if (newCurrentRadioStation < 0) {
-            newCurrentRadioStation = 9;
+            newCurrentRadioStation = maxRadioStation;
         }
-        if (newCurrentRadioStation > 9) {
+        if (newCurrentRadioStation > maxRadioStation) {
             newCurrentRadioStation = 0;
         }
         currentRadioStation = newCurrentRadioStation;
@@ -39,7 +74,7 @@ public class Radio {
 
     public void setCurrentVolume(int newCurrentVolume) {
         if (newCurrentVolume < 0) {
-            return;
+            newCurrentVolume = 0;
         }
         if (newCurrentVolume > 100) {
             newCurrentVolume = 100;
